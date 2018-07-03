@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Web Messager</title>
+
+	<link rel="stylesheet" href="css/main.css">
+	
+	<!-- LIB -->
+	<link rel="stylesheet" href="css/lib/semantic.min.css">
+</head>
+<body>
+	<!-- SITE CONTENT -->
+	
+	<!-- MENU -->
+	<div class="ui menu" id="menu">
+		<a class="item">Your ID: {{ nickname }}</a>
+	    <!--<div class="right menu">
+	        <a class="item">Sign In</a>
+	    </div>-->
+	</div>
+	<!-- END MENU -->
+	
+	<!-- MESSAGES -->
+	<div class="messages" id="messages">
+		<p v-for="data in messages_all">
+			<span class="ui label" v-bind:class="data.color">
+				<b>{{ data.nickname }}</b> - {{ data.message }}<sub>{{ data.time }}</sub>
+			</span>
+		</p>
+	</div>
+	<!-- END MESSAGES -->
+
+	<!-- CONTROL -->
+	<div class="control" id="control">
+		<div class="ui grid">
+			<div class="two wide column">
+				<div class="ui fluid input">
+				    <input type="number" placeholder="ID user" v-model="id_user">
+				</div>
+			</div>
+			<div class="fourteen wide column">
+				<div class="ui fluid action input">
+				    <input type="text" placeholder="Message" v-model="message">
+				    <div class="ui primary button" v-on:click="send_message">Send</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- END CONTROL -->
+
+	<!-- SITE CONTENT END -->
+
+	<!-- LIB -->
+	<script src="js/lib/vue.min.js"></script>
+	<script src="js/lib/jquery-3.3.1.min.js"></script>
+	<script src="js/lib/semantic.min.js"></script>
+	<script src="/socket.io/socket.io.js"></script>
+
+	<script src="js/func.js"></script>
+	<script src="js/init.js"></script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+{
+  "name": "messager",
+  "version": "1.0.0",
+  "description": "Web messager",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RazrabW/messager.git"
+  },
+  "keywords": [
+    "js"
+  ],
+  "author": "Oleg Chernov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/RazrabW/messager/issues"
+  },
+  "homepage": "https://github.com/RazrabW/messager#readme",
+  "dependencies": {
+    "express": "^4.16.3",
+    "nedb": "^1.8.0",
+    "socket.io": "^2.1.1"
+  }
+}
