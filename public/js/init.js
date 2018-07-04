@@ -8,8 +8,6 @@ clipboard.on('success', e => {
 	alert('Copyed ID');
 });
 
-
-
 if (localStorage.getItem('user_nickname') != null) {
     nickname = localStorage.getItem('user_nickname');
 } else {
@@ -49,7 +47,6 @@ let control = new Vue ({
 					message: clearHtml(control.$data.message),
 					time: getTime()
 				});
-	            scrollEnd();
 
 				socket.emit('add message', {
 	                userid: control.$data.id_user,
@@ -58,7 +55,10 @@ let control = new Vue ({
 	                message: clearHtml(control.$data.message),
 	                time: getTime()
 	            });
+				
+				control.$data.message = ''; //clear message input
 
+	            scrollEnd();
 			}
 		}
 	}
