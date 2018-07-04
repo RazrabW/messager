@@ -14,7 +14,7 @@
 	
 	<!-- MENU -->
 	<div class="ui menu" id="menu">
-		<a class="item">Your ID: {{ nickname }}</a>
+		<a class="item" data-tooltip="Copy" data-position="bottom center" v-bind:data-clipboard-text="nickname">Your ID: {{ nickname }}</a>
 	    <!--<div class="right menu">
 	        <a class="item">Sign In</a>
 	    </div>-->
@@ -54,9 +54,11 @@
 	<!-- LIB -->
 	<script src="js/lib/vue.min.js"></script>
 	<script src="js/lib/jquery-3.3.1.min.js"></script>
+	<script src="js/lib/clipboard.min.js"></script>
 	<script src="js/lib/semantic.min.js"></script>
 	<script src="/socket.io/socket.io.js"></script>
 
+	<script src="js/ui.js"></script>
 	<script src="js/func.js"></script>
 	<script src="js/init.js"></script>
 </body>

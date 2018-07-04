@@ -1,6 +1,14 @@
-
 let socket = io();
 let nickname; //ID this user
+
+// COPY 
+let clipboard = new ClipboardJS('.item');
+
+clipboard.on('success', e => {
+	alert('Copyed ID');
+});
+
+
 
 if (localStorage.getItem('user_nickname') != null) {
     nickname = localStorage.getItem('user_nickname');
